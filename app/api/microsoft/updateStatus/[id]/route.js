@@ -7,7 +7,7 @@ export async function PUT(req, { params }) {
     try {
         await connectDB();
         
-        const { id } = params;
+        const { id } = await params;  // Await params
         const body = await req.json();
         
         // Prepare update object
